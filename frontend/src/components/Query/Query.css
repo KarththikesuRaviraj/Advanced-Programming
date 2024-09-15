@@ -1,0 +1,120 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #555;
+}
+
+.query {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 60px; /* Adjust if necessary to avoid overlap with Navbar */
+}
+
+.query h1 {
+    font-size: 35px;
+    color: #004d00; /* Dark green */
+    text-align: center;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.query h1:hover {
+    transform: scale(1.1);
+}
+
+.query p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #333; /* Darker grey for better readability */
+}
+
+.query-container {
+    background-color: #f9f9f9;
+    max-width: 700px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.query-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.query .form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.query .form-group {
+    flex: 1;
+}
+
+.query .form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.query .form-group textarea {
+    height: 120px;
+    resize: vertical;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.query .error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.query .success-message {
+    color: #2ecc71;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.query button {
+    background-color: #004d00; /* Dark green */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.query button:hover {
+    background-color: #003300; /* Even darker green */
+}
+
+.query button:focus {
+    outline: none;
+}
+
+.about-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.about-footer p {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #666;
+}

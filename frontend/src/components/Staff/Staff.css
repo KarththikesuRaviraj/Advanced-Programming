@@ -1,0 +1,482 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Staff Navbar */
+
+.staff-navbar {
+    padding: 15px 0; /* Reduced padding to align contents properly */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366; /* Dark Blue Background */
+    position: relative;
+    z-index: 1000; /* Ensure it is on top of other content */
+}
+
+.staff-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px; /* Added padding to prevent contents from merging with edges */
+}
+
+.staff-logo-image {
+    width: 150px; /* Adjusted size of logo image */
+    height: auto;
+}
+
+.staff-navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex: 2;
+    justify-content: center;
+}
+
+.staff-navbar-item {
+    color: #ffffff; /* White Text */
+    text-decoration: none;
+    padding: 10px 15px; /* Adjusted padding for better alignment */
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.staff-navbar-item:hover {
+    background-color: #00509e; /* Medium Blue on Hover */
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .staff-navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .staff-navbar-menu.active {
+        display: flex;
+    }
+}
+
+/* Admin Header */
+
+.staff-header {
+    height: 30vw; /* Adjusted height for better proportion */
+    margin: 30px auto;
+    background-image: url('../Header/header_img.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: -145px;
+}
+
+.staff-header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 15.8%;
+    left: 15vw;
+    animation: fadeIn 3s;
+}
+
+.staff-header-contents h2 {
+    font-weight: 500;
+    color: #ffffff; /* White Text */
+    font-size: max(4.5vw, 22px);
+    line-height: 1.25;
+}
+
+.staff-header-contents p {
+    color: #cce5ff; /* Light Blue Text */
+    font-size: 1vw;
+    line-height: 1.84;
+    font-weight: 500;
+}
+
+/* Staff Reservation */
+
+.staff-table-container {
+    padding: 20px;
+    max-width: 1240px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.staff-table-container h1 {
+    font-size: 35px;
+    color: #004080; /* Dark Blue */
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    margin-top: -100px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.staff-table-container p {
+    font-size: 1.1vw;
+    line-height: 1.84;
+    font-weight: 500;
+    text-align: center;
+    margin-top: -40px;
+    margin-bottom: 55px;
+}
+
+.staff-table-container h1:hover {
+    transform: scale(1.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #f0f8ff; /* Alice Blue Background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #003366; /* Dark Blue */
+    color: #ffffff; /* White Text */
+}
+
+tr:nth-child(even) {
+    background-color: #e6f0ff; /* Very Light Blue */
+}
+
+.add-reservation-button, .popup-actions button {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #003366; /* Dark Blue */
+    color: #ffffff; /* White Text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-reservation-button:hover, .popup-actions button:hover {
+    background-color: #002b80; /* Even Darker Blue */
+}
+
+.search-input {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 20px;
+    border: 1px solid #003366; /* Dark Blue Border */
+}
+
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup Container */
+.popup-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between form fields */
+    position: relative;
+}
+
+/* Form Input Styles */
+.popup-container input,
+.popup-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Action Buttons */
+.popup-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-actions button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #339933; /* Green theme for buttons */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.popup-actions button:hover {
+    background-color: #267326; /* Darker green on hover */
+}
+
+/* Popup Heading */
+.popup-container h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #006600; /* Dark green for heading */
+}
+
+/* Ensure Scroll for Content */
+.popup-container {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .staff-table-container {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .popup-container {
+        padding: 15px;
+    }
+
+    .popup-container input, .popup-container select {
+        padding: 8px;
+    }
+}
+
+.admin-about-footer {
+    text-align: center;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.admin-about-footer p {
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #004080; /* Dark Blue */
+}
+
+/* Staff Feedback */
+
+.staff-container {
+    padding: 20px;
+    max-width: 1240px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.staff-form-head {
+    font-size: 35px;
+    color: #003366; /* Dark Blue */
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    margin-top: -100px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.staff-form-head:hover {
+    transform: scale(1.1);
+}
+
+.staff-contact-paragraph {
+    font-size: 1.1vw;
+    line-height: 1.84;
+    font-weight: 500;
+    text-align: center;
+    margin-top: -41px;
+    margin-bottom: 50px;
+}
+
+/* General modal styles */
+.Modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 540px;
+    background-color: #ffffff; /* White Background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Staff Query Container */
+
+.staff-query-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #e6ffe6; /* Light green background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.staff-query-container h2 {
+    font-size: 35px;
+    color: #006600; /* Dark green */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.query-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.query-table th, .query-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #66cc66; /* Green border */
+}
+
+.query-table th {
+    background-color: #339933; /* Dark green header */
+    color: #fff; /* White text */
+}
+
+.query-table td {
+    background-color: #f9fff9; /* Very light green */
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px; /* Adjust width as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #006600; /* Dark green */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #66cc66; /* Green border */
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button[type="submit"],
+button[type="button"] {
+    padding: 10px 20px;
+    background-color: #339933; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #292673; /* Darker green on hover */
+}
+
+/* Footer */
+.admin-about-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.admin-about-footer p {
+    color: #181c52;
+}
+
+/* For better responsiveness */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+
+/* Animation for fadeIn effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
